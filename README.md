@@ -1,54 +1,129 @@
-# Intelligent-PDF-Summarizer-QA-Bot-
-PDF Chat App 📝📚
-This project is a Streamlit-based application that allows users to upload a PDF document, ask questions about its content, and get context-aware answers. It uses LangChain, Google Generative AI, and a Retrieval-Augmented Generation (RAG) pipeline to achieve highly accurate and contextual responses.
+Intelligent PDF Summarizer & QA Bot 📄🤖
+
+This project is a Streamlit-based AI application that allows users to upload PDFs, process YouTube videos, or fetch website content, and then summarize and ask questions about the material. It leverages LangChain, Google Generative AI (Gemini), and a Retrieval-Augmented Generation (RAG) pipeline to deliver context-aware answers and multi-language summaries.
 
 Features 🚀
-Upload PDFs: Users can upload any PDF document.
-Chat Interface: Ask questions about the uploaded PDF content in a user-friendly chat interface.
-RAG Pipeline: Utilizes LangChain for document splitting, embeddings creation, and retrieval.
-Contextual Answers: Provides accurate answers based on the uploaded document.
-Conversation History: Saves Q&A sessions with timestamps in a CSV file.
-Streamlit Integration: A seamless and intuitive user experience.
-Google Generative AI Integration: For generating embeddings and AI-based responses.
+
+Multi-Source Input
+
+Upload PDFs
+
+Provide Website URLs
+
+Process YouTube videos (with transcript extraction)
+
+Summarization
+
+Generate concise summaries in English and Hindi
+
+Download summaries as text files
+
+Question Answering (RAG)
+
+Ask questions about PDFs, URLs, or YouTube videos
+
+Context-aware answers using FAISS vector search + Gemini
+
+Conversation History
+
+Saves Q&A sessions with timestamps, source type, and answers
+
+Export history to CSV for record-keeping
+
+Streamlit UI
+
+Clean and interactive tab-based interface
+
+Content upload, summarization, Q&A, and history tracking
+
 Tech Stack 🛠️
-Python: Core programming language.
-Streamlit: For creating the web application interface.
-LangChain: For the RAG pipeline and LLM integration.
-Google Generative AI: For embeddings and chat responses.
-FAISS: For vector similarity search and retrieval.
+
+Python – Core programming language
+
+Streamlit – Web application interface
+
+LangChain – RAG pipeline (document loaders, text splitters, embeddings, retrieval)
+
+Google Generative AI (Gemini) – Embeddings & AI-based responses
+
+FAISS – Vector similarity search & retrieval
+
+PyPDF2 / PyMuPDF – PDF text extraction
+
+YouTubeTranscriptApi – YouTube transcript extraction
+
 How to Run the Project 🏃‍♂️
 Prerequisites
+
 Install Python 3.8+
 
-Install the required libraries by running:
+Install dependencies:
 
 pip install -r requirements.txt
-Create a .env file in the root directory with your Google Generative AI credentials:
 
-GOOGLE_API_KEY=your_google_api_key
+Environment Setup
+
+Create a .env file in the root directory and add your Google Gemini API key:
+
+GOOGLE_API_KEY=your_google_api_key_here
+
 Steps to Run
+
 Clone the repository:
 
-[git clone https://github.com/your-repo-name/pdf-chat-app.git]
-cd RAG-based_Chatbot
+git clone https://github.com/your-repo-name/Intelligent-PDF-Summarizer-QA-Bot.git
+cd Intelligent-PDF-Summarizer-QA-Bot
+
+
 Start the Streamlit application:
 
 streamlit run app.py
-Open your browser and navigate to http://localhost:8501 to interact with the app.
+
+
+Open your browser and navigate to http://localhost:8501
+ to interact with the app.
 
 File Structure 📂
-pdf-chat-app/
+Intelligent-PDF-Summarizer-QA-Bot/
 ├── app.py                 # Main application file
 ├── requirements.txt       # Python dependencies
-├── record.csv             # Logs conversations with timestamps (generated after interaction)
+├── conversation_history.csv # Logs Q&A sessions (auto-generated)
+├── .env                   # Environment file (Google API key)
 └── README.md              # Project documentation
+
 Usage Instructions 🖐️
-Upload a PDF document using the "Choose a PDF file" option.
-Once the PDF is processed, type your question into the text input field.
-View the AI-generated answer in real time.
-Check the "Conversation History" for past interactions.
+
+Upload Content
+
+Choose a PDF, enter a URL, or provide a YouTube link.
+
+Process the content to build the knowledge base.
+
+Summarize
+
+Generate summaries in English or Hindi.
+
+Download them as .txt files.
+
+Ask Questions
+
+Enter questions in the chat box.
+
+Get accurate, context-aware answers.
+
+View History
+
+Browse past Q&A interactions with timestamps.
+
 Example Q&A Session 💬
-Timestamp	PDF Name	Question	Answer
-10-01-2025 12:37:49	yolov9_paper.pdf	what is Auxiliary Supervision?	Auxiliary supervision is a common method that uses relevant meta-information to guide the feature maps produced by the intermediate layers, giving them the properties needed for target tasks. Examples include using segmentation loss or depth loss to improve the accuracy of object detectors. Deep supervision is the most common type of auxiliary supervision. It inserts additional prediction layers in the middle layers for training, such as the application of multi-layer decoders in transformer-based methods.
-Streamlit Output🙌
+Timestamp	Source Type	Question	Answer
+2025-01-18 15:22:31	PDF (AI_paper.pdf)	What is Retrieval-Augmented Generation?	Retrieval-Augmented Generation (RAG) is an AI technique that combines retrieval of relevant documents with generative language models to provide more accurate, context-aware responses.
+Streamlit Output 🙌
+
+📄 PDF Upload & Processing → Summaries → Q&A → Conversation History
+
+![401876937-90b2d1bb-409b-4354-9fff-181312af22f9](https://github.com/user-attachments/assets/51c9293f-5ba9-4f00-967b-51c242d7a514)
+![401876868-049addd1-cb29-4025-9666-fc2d09c1a44e](https://github.com/user-attachments/assets/959409a7-a743-4143-b33b-8bdc3e4d00d4)
+
+✨ With this bot, you can transform static documents and videos into interactive, intelligent knowledge assistants!
 
